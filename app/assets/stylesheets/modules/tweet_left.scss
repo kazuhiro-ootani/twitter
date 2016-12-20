@@ -1,0 +1,105 @@
+.tweet-main-content{
+    padding: 8px 8px 0px 130px;
+    float: left;
+    width: 290px;
+
+
+  &__left{
+
+    .user-profile{
+      background-color:#fff;
+      margin-bottom:10px;
+      &__head{
+        .header_img{
+          border-radius: 4px 4px 0 0;
+          height: 100px;
+          width: 100%;
+        }
+      }
+      .user-profile__bottom{
+          .icon_img{
+            border-radius: 7px;
+            height: 73px;
+            width: 72px;
+            border: 2px solid #fff;
+            margin: -31px;
+            left: 176px;
+            position: absolute;
+            background-color: #fff
+          }
+        }
+          .user-name{
+            margin:0;
+            position: relative;
+            left: 100px;
+            .nickname{
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 25px;
+            }
+          }
+          .user-info{
+            padding: 10px 0;
+            margin-left: 11px;
+            ul{
+              table-layout: fixed;
+            }
+            li{
+              display: inline-block;
+              width: 32%;
+            }
+            span{
+              display: block;
+              }
+            span.u-block{
+              height: 10px;
+              color: #8899a6;
+              font-size: 10px;
+              letter-spacing: .02em;
+            }
+           span.u-number{
+            font-weight: 500;
+            padding-top: 3px;
+            color: #1DA1F2;
+            }
+          }
+      }
+    .twitter-trend{
+      background-color: #fff;
+      border: 1px solid #e1e8ed;
+      border-radius: 5px;
+      padding: 15px;
+      .trend-header{
+
+        .trend-location{
+          color: #66757f;
+          font-size: 18px;
+          font-weight: 300;
+        }
+        .middot{
+          color: #66757f;
+          font-size: 12px;
+        }
+        .trend-change{
+          font-size: 12px;
+          color: #1DA1F2;
+        }
+      }
+      .trend-contents{
+        li{
+          margin-bottom: 10px;
+        }
+
+        .trend-name{
+          color: #0084B4;
+          font-size: 13px;
+          font-weight: bold;
+        }
+        .trend-number{
+          color: #8899a6;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
