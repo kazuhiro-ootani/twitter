@@ -1,0 +1,108 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  background-color:#f5f8fa;
+}
+
+#header-bar{
+  padding: 0 130px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.top-content{
+  height: 46px;
+
+  ul{
+    li{
+      list-style: none;
+      float:left;
+      color: #66757f;
+      overflow: hidden;
+      height: 46px;
+
+
+      .fa.fa-home:before {
+        margin: 11px 0 0 10px;
+        display: inline-block;
+        content: "\f015";
+        font-family: FontAwesome;
+        font-size: 21px;
+      }
+      .fa.fa-notice:before{
+        margin: 11px 0 0 10px;
+        display: inline-block;
+        content: "\f0f3";
+        font-family: FontAwesome;
+        font-size: 21px;
+      }
+
+      .fa.fa-direct-message:before{
+        margin: 11px 0 0 10px;
+        display: inline-block;
+        content: "\f003";
+        font-family: FontAwesome;
+        font-size: 21px;
+      }
+    }
+  }
+  &__left{
+    display: inline-block;
+  }
+  .fa-twitter{
+      display: inline-block;
+      left: 50%;
+      position: absolute;
+      color: #1da1f2;
+      font-size: 24px;
+      margin-top: 10px;
+  }
+  &__right{
+    float:right;
+    display: inline-block;
+    margin-top: 8px;
+    .top-content__right-block{
+      float:left;
+      .search{
+        display: inline-block;
+        form{
+          height: 25px;
+          input{
+            position:relative;
+            width: 221px;
+            height: 34px;
+            font-size: 12px;
+            line-height: 1;
+            color: #292f33;
+            padding: 0 0 0 5px;
+            background-color: #f5f8fa;
+            border: 1px solid #e1e8ed;
+            border-radius: 21px;
+          }
+          .search--btn{
+            right: 257px;
+            top: 0;
+            padding: 16px;
+            position:absolute;
+          }
+        }
+      }
+    }
+  ul.link__icon{
+    float:right;
+    li{
+
+
+      .icon-size{
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+      }
+      .tweet--btn{
+        width: 100px;
+        height: 32px;
+      }
+    }
+  }
+  }
+}
+
