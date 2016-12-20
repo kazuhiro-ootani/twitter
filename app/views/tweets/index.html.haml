@@ -23,13 +23,13 @@
     .top-content__right
       .top-content__right-block
         .search
-          %form{:action => "/", :method => ""}
-            %input{placeholder: "キーワード検索"}
-            %i.fa.fa-search{class: "search--btn"}
-        %ul.link__icon
-          %li.user__icon
-            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size")
-          %li.tweet__btn
-            = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
+
+          %input{placeholder: "キーワード検索"}
+          %i.fa.fa-search{class: "search--btn"}
+      %ul.link__icon
+        %li.user__icon
+          = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size")
+        %li.tweet__btn
+          = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
 
 = render partial: 'tweets/tweet'
