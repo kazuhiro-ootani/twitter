@@ -1,0 +1,147 @@
+.tweet-center-page{
+  margin: 0 10px;
+  float:left;
+  width: 590px;
+  .message-formbox{
+    background-color: #E8F5FD;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #e1e8ed;
+    height: 150px;
+  }
+    .message-user-box{
+      padding: 10px 12px;
+    }
+    .user-img-box{
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    border-radius: 4px;
+    background-color: #fff;
+    float:left;
+  }
+  .message-input{
+    position: relative;
+    left: 9px;
+    top: -5px;
+    width: 508px;
+    height: 80px;
+  }
+  .pre_camera{
+    position: relative;
+    top: -5px;
+    left: -27px;
+  }
+  .tweet-box-toolbar{
+    position: relative;
+    left: 57px;
+    font-size: 21px;
+    color: #1b95e0;
+    top: -12px;
+    .tweet-box-extra{
+      display: inline-block;
+      .fa{
+        width: 50px;
+      }
+    }
+    .tweet-box-tweet-btn{
+      position: relative;
+      top: 1px;
+      left: 130px;
+      display: inline-block;
+    }
+    .tweet-counter{
+      color: #8899a6;
+      font-size:14px;
+    }
+    button{
+      top: 11px;
+      position: relative;
+      background: none;
+      border: 0;
+    }
+    .new-tweet-btn{
+      width: 111px;
+      height: 40px;
+    }
+  }
+  .message-alarm{
+    font-size: 13px;
+    display: block;
+    padding: 10px 1px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: normal;
+    color: #1da1f2;
+    background-color: #f5f8fa;
+    border-top: 1px solid #e1e8ed;
+    border-bottom: 1px solid #e1e8ed;
+    border-left: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+  }
+  li.tweet-list{
+    border-bottom: 1px solid #e1e8ed;
+  }
+    .message-tweet-content{
+      background-color: #FFF;
+      min-height: 51px;
+      padding: 9px 12px;
+      .content{
+        margin-left: 58px;
+        .tweet-user-icon{
+          width: 48px;
+          height: 48px;
+          border-radius: 5px;
+          margin-left: -57px;
+          float: left;
+          }
+        .content-header{
+          span.nickname{
+            color: #292f33;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: bold;
+          }
+          span.id{
+            font-size: 13px;
+            color: #8899a6;
+          }
+          span.timestamps{
+            font-size: 13px;
+            color: #8899a6;
+          }
+          .content-main-text{
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+        .content-btn{
+          margin-top:10px;
+          .reply-btn{
+            color: #aab8c2;
+            display: inline-block;
+            min-width: 80px;
+
+          }
+          .retweet-btn{
+            color: #aab8c2;
+            display: inline-block;
+            min-width: 80px;
+          }
+          .favorite-btn{
+            color: #aab8c2;
+            display: inline-block;
+            min-width: 80px;
+          }
+          .detail-btn{
+            color: #aab8c2;
+            display: inline-block;
+            min-width: 80px;
+          }
+
+        }
+      }
+    }
+  }
