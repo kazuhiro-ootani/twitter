@@ -1,0 +1,376 @@
+.profile-page{
+  .profile-page-img{
+    height: 300px;
+    .profile-header-img{
+      height: 300px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto 0;
+      width: 100%;
+    }
+    .profile-page-user-icon{
+      left: 146px;
+      position: relative;
+      transition: bottom .3s;
+      z-index: 3;
+      top: 181px;
+      width: 210px;
+      .profile-icon-size{
+        background: #fff;
+        border: 5px solid #fff;
+        border-radius: 12px;
+        box-shadow: 0 1px 1px rgba(136,153,166,0.15);
+        height: 200px;
+        position: relative;
+        width: 200px;
+      }
+    }
+  }
+  }
+.profile-nav-bar{
+  background-color: #fff;
+  border-bottom: 1px solid #e1e8ed;
+  height: 60px;
+  .profile-sub-nav{
+    margin: 0 125px;
+    height: 60px;
+    .profile-hidden-nav{
+      height: 60px;
+      width: 25%;
+      display: inline-block;
+    }
+    .profile-main-nav{
+      height: 60px;
+      display: inline-block;
+      width: 74%;
+      position: relative;
+      top: -15px;
+      .profile-main-nav-inner{
+        height: 60px;
+        li{
+          display: inline-block;
+          height: 39px;
+          border-bottom: 0 solid;
+          line-height: 1;
+          padding: 14px 15px 7px;
+          text-align: center
+        }
+        .main-nav-contents{
+          height: 60px;
+          .main-nav-content{
+            .nav-tweet-text{
+              color: #66757f;
+              font-size: 11px;
+              letter-spacing: .02em;
+            }
+            .nav-tweet-number{
+              font-size: 18px;
+              padding-top: 3px;
+              font-weight: 500;
+              color: #1DA1F2;
+            }
+            .nav-info{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.info-container{
+  margin: 0 145px;
+  .info-container-inner{
+    .profile-nav-left{
+      float:left;
+      width:280px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      .profile-nav-left-info{
+        position: relative;
+        top: 21px;
+        .profile-nav-left-info-nickname{
+          font-size: 22px;
+          font-weight: 700;
+          line-height: 1.375;
+
+        }
+        .profile-nav-left-info-id{
+          color: #8899a6;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1;
+          margin-bottom: 10px;
+
+        }
+        .profile-nav-left-info-bio{
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          margin-bottom: 10px;
+          word-wrap: break-word;
+
+        }
+        .profile-nav-left-info-url{
+          .fa-link{
+            display: inline-block;
+            color: #8899a6;
+            font-size: 14px;
+            line-height: 1;
+          }
+          .profile-url{
+            display: inline-block;
+            color: #1DA1F2;
+            font-size: 14px;
+          }
+        }
+        .profile-nav-left-info-created-data{
+          .fa.fa-calendar{
+            display: inline-block;
+            color: #8899a6;
+            font-size: 14px;
+            line-height: 1;
+
+          }
+          .calendar-bio{
+            display: inline-block;
+            font-size: 14px;
+          }
+
+        }
+        }
+        .photo-rails{
+          position: relative;
+          top: 40px;
+          .photo-info{
+            margin-bottom: 10px;
+
+            .bio-camera{
+              display: inline-block;
+              color: #8899a6;
+              font-size: 13px;
+              line-height: 1;
+            }
+            .photo-number{
+              display: inline-block;
+              color: #0084B4;
+              font-size: 13px;
+              line-height: 1;
+            }
+          }
+        .photo-box{
+          max-height: 176px;
+          margin-bottom: 25px;
+          margin-right: 10px;
+
+          .my-photo.media{
+            display: inline-block;
+            .photobox-icon-size{
+              height: 83px;
+              width: 83px;
+              margin-left: 0px;
+              margin-top: 0px;
+              border-radius: 4px;
+              cursor: pointer;
+              background-color: white;
+            }
+          }
+        }
+        }
+        .recommend-user{
+          background-color:#FFF;
+          border-radius: 6px;
+          padding: 14px;
+          margin-bottom: 10px;
+          border: 1px solid #e1e8ed;
+          position: relative;
+          top: 25px;
+        }
+          .notification{
+            font-size: 18px;
+            color: #66757f;
+          }
+          .reload-link{
+            font-size: 12px;
+            color: #1b95e0;
+          }
+          .view-all-link{
+            font-size: 12px;
+            color: #1b95e0;
+          }
+        .recommend-follow-user{
+          display: inline-block;
+          margin-top: 10px;
+
+          .recommend-user-icon{
+            width: 48px;
+            height: 48px;
+            border-radius: 5px;
+          }
+        }
+        .recommend-user-list{
+          display: inline-block;
+          position: relative;
+          top: -28px;
+          .recommend-user-nickname{
+            color: #292f33;
+            font-size: 14px;
+          }
+          .recommend-user-id{
+            color: #8899a6;
+            font-size: 12px;
+          }
+        }
+        .recommend-user-follow{
+          display: inline-block;
+          position: relative;
+          left: 53px;
+          top: -22px;
+        }
+        .recommend-user__more{
+          margin-top: 10px;
+          color: #1DA1F2;
+          font-size: 12px;
+        }
+        .twitter-trend{
+          background-color: #fff;
+          border: 1px solid #e1e8ed;
+          border-radius: 5px;
+          padding: 15px;
+          position: relative;
+          top: 40px;
+        .trend-header{
+
+          .trend-location{
+            color: #66757f;
+            font-size: 18px;
+            font-weight: 300;
+          }
+          .middot{
+            color: #66757f;
+            font-size: 12px;
+          }
+          .trend-change{
+            font-size: 12px;
+            color: #1DA1F2;
+          }
+        }
+        .trend-contents{
+          li{
+            margin-bottom: 10px;
+          }
+
+          .trend-name{
+            color: #0084B4;
+            font-size: 13px;
+            font-weight: bold;
+          }
+          .trend-number{
+            color: #8899a6;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .profile-nav-right{
+      .profile-nav-right-inner{
+        min-width: 1200px;
+        .grid-cell{
+          width: 286px;
+          display: inline-block;
+          .grid-cell-inner{
+            .grid-cell-inner-header-img{
+              .grid-profile-header-img{
+                width: 287px;
+                border-bottom: 1px solid #e1e8ed;
+                display: block;
+                height: 95px;
+                border-radius: 4px 4px 0 0;
+                background-position: 0 50%;
+              }
+            }
+          }
+          .grid-cell-bottom{
+            margin: 13px 15px;
+            position: relative;
+            .grid-cell-user-icon{
+              display: inline-block;
+              .grid-cell-user-icon-size{
+                background-color: #fff;
+                border-radius: 6px;
+                display: inline-block;
+                margin: -45px 2px 0 -3px;
+                padding: 3px;
+                position: relative;
+                vertical-align: bottom;
+                z-index: 1;
+                height: 83px;
+                width: 83px;
+              }
+            }
+            .profile-card{
+              float: right;
+              display: inline-block;
+              .fa.fa-cog{
+                display: inline-block;
+                color: #8899a6;
+                padding-top: 5px;
+                margin-right: 8px;
+              }
+              .profile-button{
+                display: inline-block;
+                  .profile-btn-follow{
+                    color: #fff;
+                    background-color: #1da1f2;
+                    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+                    border: 1px solid #3b88c3;
+                    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+                    font-size: 13px;
+                    padding: 3px 11px 5px;
+                    border-radius: 5px;
+                    .profile-btn-follow-text{
+                      font-size: 14px;
+                    }
+                  }
+              }
+            }
+            .grid-cell-profile{
+              padding-top: 5px;
+
+              .grid-cell-name{
+                color: #292f33;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 1;
+              }
+              .grid-cell-id{
+                color: #66757f;
+                font-size: 12px;
+                font-weight: 400;
+                display: inline-block;
+              }
+              .grid-cell-follower{
+                color: #8899a6;
+                font-size: 11px;
+                font-weight: 400;
+                margin-left: 3px;
+                display: inline-block;
+              }
+            }
+            .profile-card-bio{
+              color: #66757f;
+              font-weight: 400;
+              word-wrap: break-word;
+              overflow: hidden;
+              font-size: 14px;
+              line-height: 1.375em;
+              height: 5.5em;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      }
+  }
+}
