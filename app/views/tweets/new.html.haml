@@ -1,0 +1,42 @@
+.global-nav
+  .global-nav-inner
+    %i.fa.fa-twitter.signbird
+    .right-menu
+      .language-dropdown
+        %span.language-info
+          言語:
+        %span.language-select
+          日本語
+      .session-dropdown
+        %span.session-info
+          アカウントをお持ちの場合
+        %span.session-login
+          ログイン
+
+.page-outer
+  .sign-up-container
+    .sign-up-canvas
+      .sign-up-main
+        .sign-up-notification
+          %h3
+            Twitterを使ってみよう
+          %form.sign-up-form
+            %input{placeholder:"呼び名（ニックネームも可）"}
+            %input{placeholder:"電話番号またはメールアドレス"}
+            %input{placeholder:"パスワード"}
+          .cookie-box
+            %label
+              %input{type:"checkbox"}
+            %span.cookie-support
+              最近閲覧したウェブサイトを基にカスタマイズする。
+            %a.cookie-link
+              詳細はこちら
+          .sign-up-box
+            %input{type: "submit", value: "アカウント作成", class: "sign-up-button"}
+          .befound
+            %p.befound-text
+              アカウントを作成すると、利用規約、およびCookieの使用を含むプライバシーポリシーに同意したことになります。あなたのメールアドレスや電話番号を連絡先に保存しているTwitterユーザーに通知などが表示されます。
+          .advanced-options
+            詳細設定オプション（プライバシー設定）
+
+

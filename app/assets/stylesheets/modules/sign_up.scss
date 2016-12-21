@@ -1,0 +1,124 @@
+.global-nav{
+  position: fixed;
+  background-image: url("https://abs.twimg.com/a/1481943788/img/t1/lohp_streams_header_bg_v4.png");
+  height: 46px;
+  width: 100%;
+  .global-nav-inner{
+    .signbird{
+      color: white;
+      width: 24px;
+      height: 21px;
+      margin: 11px 0 0 10px;
+      float: left;
+      font-size: 21px;
+      position: relative;
+      left: 50%;
+    }
+  .right-menu{
+    position: relative;
+    left: -110px;
+    float:right;
+    margin: 7px 30px 0 0;
+    color: white;
+    font-size: 12px;
+
+      .language-dropdown{
+        margin-top: 8px;
+        display: inline-block;
+        .language-select{
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+      .session-dropdown{
+        margin-left: 6px;
+        margin-top: 8px;
+        display: inline-block;
+        .session-login{
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+  }
+  }
+}
+.page-outer{
+  background-color: white;
+
+  .sign-up-container{
+    min-height: 0;
+    margin: 0 auto;
+    width: 1190px;
+    padding-top: 130px;
+    padding-bottom: 130px;
+
+    .sign-up-canvas{
+      margin: 0 auto;
+      width: 500px;
+      .sign-up-main{
+        margin: 0 auto;
+
+      .sign-up-notification{
+        h3{
+          font-size: 30px;
+          line-height: 36px;
+          font-weight: 300;
+          padding: 0;
+          margin-bottom: 24px;
+          padding-top: 30px;
+          margin-left: 40px;
+        }
+        .sign-up-form{
+          input{
+            width: 372px;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 26px;
+          }
+        }
+        .cookie-box{
+          width: 346px;
+          margin-bottom: 26px;
+          .cookie-support{
+            color: #66757f;
+            font-size: 13px;
+          }
+          .cookie-link{
+            color: #1b95e0;
+            font-size: 12px;
+          }
+        }
+        .sign-up-box{
+          .sign-up-button{
+            width: 392px;
+            background-color: #1da1f2;
+            background-repeat: no-repeat;
+            background-image: none;
+            box-shadow: none;
+            font-size: 16px;
+            font-weight: normal;
+            padding: 12px 16px;
+            border: 0;
+            color: white;
+            border-radius: 3px;
+          }
+        }
+        .befound{
+          padding-top: 10px;
+           width: 405px;
+          .befound-text{
+            line-height: 18px;
+            font-size: 12px;
+            color: #8899a6;
+          }
+        }
+        .advanced-options{
+          margin-top: 16px;
+          color: #1b95e0;
+          font-size: 12px;
+        }
+      }
+      }
+    }
+  }
+}
