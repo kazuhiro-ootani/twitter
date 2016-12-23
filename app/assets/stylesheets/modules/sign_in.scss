@@ -1,0 +1,138 @@
+.global-nav-sign-in{
+  background-color: #FFF;
+  position: fixed;
+  padding-top: 12px;
+  height: 34px;
+  width: 100%;
+  .global-nav-inner-sign-in{
+    margin: 0 261px;
+
+    .action-btn-sign-in{
+      float: left;
+      .sign-in-icon{
+        display: inline-block;
+        height: 42px;
+        .sign-in-bird{
+          display: inline-block;
+          color: #1da1f2;
+          width: 24px;
+          height: 21px;
+          font-size: 21px;
+        }
+        .sign-in-notify{
+          color: #66757f;
+          font-size: 13px;
+          font-weight: 500;
+          display: inline-block;
+          height: 42px;
+          .text{
+            margin-top: 11px;
+          }
+        }
+      }
+      .sign-in-notification{
+        color: #66757f;
+        font-size: 13px;
+        font-weight: 500;
+        display: inline-block;
+      }
+    }
+    .action-language{
+      float:right;
+      .language-select{
+        font-size: 12px;
+        color: #66757f;
+      }
+      .language-selected{
+        color: #66757f;
+        font-size: 13px;
+        font-weight: 500;
+
+      }
+    }
+  }
+}
+.wrapper1{
+
+  .wrapper2{
+    margin:0 261px;
+    padding: 56px 14px 15px;
+
+    .page-canvas{
+      margin-bottom: 15px;
+      background-color: white;
+      overflow:hidden;
+      .sign-in-wrapper{
+        margin: 0 auto 10px;
+        width: 585px;
+        h1{
+          padding: 40px 0 20px 0;
+          font-size: 24px;
+          line-height: .8;
+        }
+        .formset{
+          overflow: hidden;
+          margin-bottom: 16px;
+          .sign-in-usr-field{
+            margin-bottom: 15px;
+
+            .sign-in-user-field{
+              height: 29px;
+              font-size: 13px;
+              width: 97%;
+              max-width: 280px;
+              margin-right: 10px;
+              background-color: #fff;
+              border: 1px solid #e1e8ed;
+              border-radius: 3px;
+            }
+          }
+          .sign-in-ps-field{
+            margin-bottom: 15px;
+            .sign-in-pass-field{
+              height: 29px;
+              font-size: 13px;
+              width: 97%;
+              max-width: 280px;
+              margin-right: 10px;
+              background-color: #fff;
+              border: 1px solid #e1e8ed;
+              border-radius: 3px;
+            }
+          }
+        }
+      }
+      .sign-in-field-btn{
+        display: inline-block;
+        .sign-in-btn{
+          color: #fff;
+          background-color: #1da1f2;
+          background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+          border: 1px solid #3b88c3;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+          font-size: 14px;
+          font-weight: bold;
+          line-height: normal;
+          padding: 8px 16px;
+          position: relative;
+          border-radius: 3px;
+
+        }
+      }
+      .sign-in-btn-check{
+
+        display: inline-block;
+        .sign-in-remember{
+          font-size: 13px;
+          .sign-in-rem{
+          }
+        }
+        .forget{
+          color: #1b95e0;
+          font-size:12px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -48,6 +48,9 @@
       top: -15px;
       .profile-main-nav-inner{
         height: 60px;
+        ul{
+          display: inline-block;
+        }
         li{
           display: inline-block;
           height: 39px;
@@ -74,6 +77,27 @@
               display: block;
             }
           }
+        }
+        .profile-edit-btn-wrap{
+          display: inline-block;
+          margin-left: 165px;
+          position: relative;
+          bottom: 10px;
+
+          .profile-edit-btn{
+            background-color: #f5f8fa;
+            background-repeat: no-repeat;
+            border: 1px solid #e1e8ed;
+            border-radius: 4px;
+            color: #66757f;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: normal;
+            padding: 8px 16px;
+            position: relative;
+        }
         }
       }
     }
@@ -371,6 +395,6 @@
           }
         }
       }
-      }
+    }
   }
 }

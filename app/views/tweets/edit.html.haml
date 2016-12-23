@@ -1,0 +1,41 @@
+.global-nav-sign-in
+  .global-nav-inner-sign-in
+    .action-btn-sign-in
+      .sign-in-icon
+        %i.fa.fa-twitter.sign-in-bird
+        .sign-in-notify
+          %span.text
+            ホーム
+      .sign-in-notification
+        %span.text
+          Twitterについて
+    .action-language
+      %span.language-select
+        言語
+      %span.language-selected
+        日本語
+
+.wrapper1
+  .wrapper2
+    .page-canvas
+      .sign-in-wrapper
+        %h1
+          Twitterにログイン
+        .formset
+          .sign-in-usr-field
+            %input.sign-in-user-field{placeholder: "電話番号/メールアドレス/ユーザー名"}
+          .sign-in-ps-field
+            %input.sign-in-pass-field{placeholder: "パスワード"}
+        .sign-in-field-btn
+          %button.sign-in-btn
+            ログイン
+        .sign-in-btn-check
+          %label.sign-in-remember
+            %input.sign-in-rem{type: "checkbox"}
+              保存する
+            %span.separator
+              ・
+          =link_to "パスワードを忘れた方はこちら", root_path ,class: "forget"
+
+
+
