@@ -1,0 +1,42 @@
+.global-nav
+  .global-nav-inner
+    %i.fa.fa-twitter.signbird
+    .right-menu
+      .language-dropdown
+        %span.language-info
+          言語:
+        %span.language-select
+          日本語
+      .session-dropdown
+        %span.session-info
+          アカウントをお持ちの場合
+        %span.session-login
+        =link_to 'ログイン',new_user_session_path
+
+.page-outer
+  .sign-up-container
+    .sign-up-canvas
+      .sign-up-main
+        .sign-up-notification
+          %h3
+            Twitterを使ってみよう
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "sign-up-form"}) do |f|
+            = devise_error_messages!
+            = f.text_field :username, autofocus: true, placeholder: "ユーザーID(半角英数のみ)", class: :field
+            = f.text_field :nickname, autofocus: true, placeholder:"ニックネーム",class: :field
+            = f.email_field :email, autofocus: true, placeholder: "電話番号またはメールアドレス",class: :field
+            = f.password_field :password, autocomplete: "off", placeholder:"パスワード",class: :field
+            .cookie-box
+              %label
+                %input{type:"checkbox"}
+              %span.cookie-support
+                最近閲覧したウェブサイトを基にカスタマイズする。
+              %a.cookie-link
+                詳細はこちら
+            .sign-up-box
+              = f.submit "アカウント作成",class: "sign-up-button"
+            .befound
+              %p.befound-text
+                アカウントを作成すると、利用規約、およびCookieの使用を含むプライバシーポリシーに同意したことになります。あなたのメールアドレスや電話番号を連絡先に保存しているTwitterユーザーに通知などが表示されます。
+            .advanced-options
+              詳細設定オプション（プライバシー設定）
