@@ -1,0 +1,37 @@
+.global-nav-sign-in
+  .global-nav-inner-sign-in
+    .action-btn-sign-in
+      .sign-in-icon
+        %i.fa.fa-twitter.sign-in-bird
+        .sign-in-notify
+          %span.text
+            ホーム
+      .sign-in-notification
+        %span.text
+          Twitterについて
+    .action-language
+      %span.language-select
+        言語
+      %span.language-selected
+        日本語
+
+.wrapper1
+  .wrapper2
+    .page-canvas
+      .sign-in-wrapper
+        %h1
+          Twitterにログイン
+        = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "formset"}) do |f|
+          .sign-in-usr-field
+            = f.email_field :email, autofocus: true, class: "sign-in-user-field", placeholder: "メールアドレス"
+          .sign-in-ps-field
+            = f.password_field :password, autocomplete: "off",class: "sign-in-pass-field", placeholder: "パスワード"
+          .sign-in-field-btn
+            = f.submit "ログイン",class: "sign-in-btn"
+          .sign-in-btn-check
+            %label.sign-in-remember
+              %input.sign-in-rem{type: "checkbox"}
+                保存する
+              %span.separator
+                ・
+            =link_to "パスワードを忘れた方はこちら", root_path ,class: "forget"
