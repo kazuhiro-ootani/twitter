@@ -1,0 +1,22 @@
+%li.tweet-list
+  .message-tweet-content
+    .content
+      = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "tweet-user-icon")
+      .content-header
+        %span.nickname<>
+          = current_user.nickname
+        %span.id<>
+          = current_user.username
+        %span.timestamps<>
+          = tweet.created_at
+        .content-main-text<>
+          = tweet.text
+      .content-btn
+        .reply-btn
+          .fa.fa-reply
+        .retweet-btn
+          .fa.fa-retweet
+        .favorite-btn
+          .fa.fa-heart
+        .detail-btn
+          .fa.fa-ellipsis-h
