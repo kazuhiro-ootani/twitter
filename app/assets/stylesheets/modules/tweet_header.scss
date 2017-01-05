@@ -5,12 +5,13 @@ html,body{
 }
 
 #header-bar{
-  padding: 0 130px;
+  padding: 0px 130px;
   background-color: white;
   border-bottom: 1px solid rgba(0,0,0,0.15);
   position: fixed;
   z-index: 4;
-  width: 1190px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .top-content{
   height: 46px;
