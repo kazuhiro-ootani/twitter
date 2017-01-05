@@ -4,9 +4,10 @@
       = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "tweet-user-icon")
       .content-header
         %span.nickname<>
-          = current_user.nickname
+          = tweet.user.nickname
         %span.id<>
-          = current_user.username
+          @
+          = tweet.user.username
         %span.timestamps<>
           = tweet.created_at
         .content-main-text<>

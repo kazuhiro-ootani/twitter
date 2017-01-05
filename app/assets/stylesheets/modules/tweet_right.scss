@@ -2,6 +2,7 @@
   padding-top: 55px;
   float:left;
   width: 290px;
+  @include clearfix();
   .recommend-user{
     background-color:#FFF;
     border-radius: 6px;

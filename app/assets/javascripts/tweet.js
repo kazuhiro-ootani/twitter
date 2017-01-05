@@ -45,13 +45,14 @@ $(function(){
 
   $('#message-tweet-button').on('click',function(e){
   e.preventDefault();
+  if ($('.message-input').val() == ""){
+    alert("？？？？？？？？？？？？？？");
+  }
+  else{
   var textField = $(".message-input");
   var form = $('#new_tweet').get()[0];
-  console.log(form);
 
   var formData = new FormData(form);
-  console.log(formData);
-
   $.ajax({
     type: 'POST',
     url: '/tweets.json',
@@ -62,9 +63,9 @@ $(function(){
   })
   .done(function(data){
     var added_html = buildNewTweetComponent(data);
-    console.log(data);
     $('ul.tweet-lists').prepend(added_html);
     textField.val('');
   })
+  }
   });
 });

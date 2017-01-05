@@ -45,20 +45,23 @@
       .profile-main-nav-inner
         %ul.main-nav-contents
           %li.main-nav-content
-            %span.nav-tweet-text.nav-info
-              ツイート
-            %span.nav-tweet-number.nav-info
-              130000
+            = link_to users_path do
+              %span.nav-tweet-text.nav-info
+                ツイート
+              %span.nav-tweet-number.nav-info
+                = current_user.tweets.count
           %li.main-nav-content
-            %span.nav-tweet-text.nav-info
-              フォロー
-            %span.nav-tweet-number.nav-info
-              300
+            = link_to following_path(current_user) do
+              %span.nav-tweet-text.nav-info
+                フォロー
+              %span.nav-tweet-number.nav-info
+                = current_user.following.count
           %li.main-nav-content
-            %span.nav-tweet-text.nav-info
-              フォロワー
-            %span.nav-tweet-number.nav-info
-              500
+            = link_to followed_path(current_user) do
+              %span.nav-tweet-text.nav-info
+                フォロワー
+              %span.nav-tweet-number.nav-info
+                = current_user.followers.count
           %li.main-nav-content
             %span.nav-tweet-text.nav-info
               いいね
@@ -83,9 +86,9 @@
     .profile-nav-left
       .profile-nav-left-info
         .profile-nav-left-info-nickname
-          めそじ
+          = current_user.nickname
         .profile-nav-left-info-id
-          @mesozi
+          = current_user.username
         .profile-nav-left-info-bio
           うわあああああああんああああ
         .profile-nav-left-info-url
@@ -210,6 +213,6 @@
                 23942件のツイート
 
 
-    .profile-nav-right
-      .profile-nav-right-inner
-        = render partial: 'tweets/follow'
+    .message-tweet
+      %ul.tweet-lists
+        = render partial: 'tweets/user_text', collection: @tweets, as:'tweet'

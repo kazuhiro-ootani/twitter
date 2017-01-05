@@ -51,6 +51,9 @@
         ul{
           display: inline-block;
         }
+        a{
+          text-decoration: none;
+        }
         li{
           display: inline-block;
           height: 39px;
@@ -80,7 +83,7 @@
         }
         .profile-edit-btn-wrap{
           display: inline-block;
-          margin-left: 165px;
+          margin-left: 150px;
           position: relative;
           bottom: 10px;
 
