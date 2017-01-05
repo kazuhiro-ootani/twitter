@@ -1,0 +1,218 @@
+#header-bar
+
+  .top-content
+    .top-content__left
+      %ul.navigation
+        %li.navigation
+          .top-content__home
+            %span.fa.fa-home
+            %span.text
+              ホーム
+        %li.navigation
+          .top-content__notice
+            %span.fa.fa-notice
+            %span.text
+              通知
+        %li.navigation
+          .top-content__direct-message
+            %span.fa.fa-direct-message
+            %span.text
+              メッセージ
+    %i.fa.fa-twitter
+
+    .top-content__right
+      .top-content__right-block
+        .search
+          %form{:action => "/", :method => ""}
+            %input{placeholder: "キーワード検索"}
+            %i.fa.fa-search{class: "search--btn"}
+        %ul.link__icon
+          %li.user__icon
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size")
+          %li.tweet__btn
+            = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
+
+
+.profile-page
+  .profile-page-img
+    = image_tag("http://photosku.com/img/slick/02.jpg", class: "profile-header-img")
+    .profile-page-user-icon
+      = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "profile-icon-size")
+.profile-nav-bar
+  .profile-sub-nav
+    .profile-hidden-nav
+    .profile-main-nav
+      .profile-main-nav-inner
+        %ul.main-nav-contents
+          %li.main-nav-content
+            = link_to users_path do
+              %span.nav-tweet-text.nav-info
+                ツイート
+              %span.nav-tweet-number.nav-info
+                = current_user.tweets.count
+          %li.main-nav-content
+            = link_to following_path(current_user) do
+              %span.nav-tweet-text.nav-info
+                フォロー
+              %span.nav-tweet-number.nav-info
+                = current_user.following.count
+          %li.main-nav-content
+            = link_to followed_path(current_user) do
+              %span.nav-tweet-text.nav-info
+                フォロワー
+              %span.nav-tweet-number.nav-info
+                = current_user.followers.count
+          %li.main-nav-content
+            %span.nav-tweet-text.nav-info
+              いいね
+            %span.nav-tweet-number.nav-info
+              29402904
+          %li.main-nav-content
+            %span.nav-tweet-text.nav-info
+              リスト
+            %span.nav-tweet-number.nav-info
+              1
+          %li.main-nav-content
+            %span.nav-tweet-text.nav-info
+              モーメント
+            %span.nav-tweet-number.nav-info
+              0
+        .profile-edit-btn-wrap
+          %button.profile-edit-btn
+            プロフィール編集
+
+.info-container
+  .info-container-inner
+    .profile-nav-left
+      .profile-nav-left-info
+        .profile-nav-left-info-nickname
+          = current_user.nickname
+        .profile-nav-left-info-id
+          = current_user.username
+        .profile-nav-left-info-bio
+          うわあああああああんああああ
+        .profile-nav-left-info-url
+          .fa.fa-link
+          .profile-url
+            http://google.co.jp/
+        .profile-nav-left-info-created-data
+          .fa.fa-calendar
+          .calendar-bio
+            2010年1月登録
+      .photo-rails
+        .photo-info
+          .fa.fa-camera.bio-camera
+          .photo-number
+            732 画像と動画
+        .photo-box
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+      .recommend-user
+        .recommend-user-header
+          %span.notification
+            おすすめユーザー
+          %span.reload-link
+            更新
+          %span.view-all-link
+            すべてを見る
+        .recommend-follow-users
+          .recommend-follow-user
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
+            .recommend-user-list
+              %span.recommend-user-nickname
+                めそじ
+              %span.recommend-user-id
+                @mesozi
+            .recommend-user-follow
+              フォローする
+          .recommend-follow-user
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
+            .recommend-user-list
+              %span.recommend-user-nickname
+                めそじ
+              %span.recommend-user-id
+                @mesozi
+            .recommend-user-follow
+              フォローする
+          .recommend-follow-user
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
+            .recommend-user-list
+              %span.recommend-user-nickname
+                めそじ
+              %span.recommend-user-id
+                @mesozi
+            .recommend-user-follow
+              フォローする
+          .recommend-user__more
+            友だちを見つける
+
+      .twitter-trend
+        .trend-header
+          %span.trend-location
+            トレンド
+          %span.middot
+            ・
+          %span.trend-change
+            変更する
+        .trend-contents
+          %ul.trend-contents-list
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+
+
+    .message-tweet
+      %ul.tweet-lists
+        = render partial: 'tweets/user_text', collection: @tweets, as:'tweet'
