@@ -13,21 +13,24 @@
             = current_user.username
         .user-info
           %ul.user-info__list
+          = link_to user_path(current_user) do
             %li.info-list
               %span.u-block
                 ツイート数
               %span.user-tweet-number.u-number
-                120000
-            %li.info-list
-              %span.u-block
-                フォロー
-              %span.user-follow-number.u-number
-                300
-            %li.info-list
-              %span.u-block
-                フォロワー
-              %span.user-follower-number.u-number
-                500
+                = current_user.tweets.count
+            = link_to following_path(current_user.id) do
+              %li.info-list
+                %span.u-block
+                  フォロー
+                %span.user-follow-number.u-number
+                  = current_user.following.count
+            = link_to followed_path(current_user) do
+              %li.info-list
+                %span.u-block
+                  フォロワー
+                %span.user-follower-number.u-number
+                  = @current_user.followers.count
     .twitter-trend
       .trend-header
         %span.trend-location
@@ -106,7 +109,7 @@
     300件の新着ツイートを表示
   .message-tweet-long
     %ul.tweet-lists
-      = render partial: 'tweets/user_text',collection: tweets, as:'tweet'
+      = render partial: 'tweets/user_text',collection: feed_tweets, as:'tweet'
 
 .tweet-main-content__right
   .recommend-user

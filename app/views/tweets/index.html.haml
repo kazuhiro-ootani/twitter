@@ -3,11 +3,12 @@
   .top-content
     .top-content__left
       %ul.navigation
-        %li.navigation
-          .top-content__home
-            %span.fa.fa-home
-            %span.text
-              ホーム
+        = link_to root_path do
+          %li.navigation
+            .top-content__home
+              %span.fa.fa-home
+              %span.text
+                ホーム
         %li.navigation
           .top-content__notice
             %span.fa.fa-notice
@@ -18,7 +19,8 @@
             %span.fa.fa-direct-message
             %span.text
               メッセージ
-    %i.fa.fa-twitter
+    =link_to root_path do
+      %i.fa.fa-twitter
 
     .top-content__right
       .top-content__right-block
@@ -33,4 +35,4 @@
           %li.tweet__btn
             = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
 
-= render partial: 'tweets/tweet',locals: {tweets: @tweets}
+= render partial: 'tweets/tweet',locals: {feed_tweets: @feed_tweets}
