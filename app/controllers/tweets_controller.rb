@@ -4,6 +4,8 @@ class TweetsController < ApplicationController
 def index
 @tweet = Tweet.new
 @tweets = Tweet.order('created_at DESC').limit(20)
+@tweeto = current_user.tweets.build
+@feed_tweets = current_user.feed.order('created_at DESC')
 end
 
 def new
