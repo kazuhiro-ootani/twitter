@@ -1,7 +1,10 @@
 %li.tweet-list
   .message-tweet-content
     .content
-      = image_tag(tweet.user.user_img, class: "tweet-user-icon")
+      -if tweet.user.user_img
+        = image_tag(tweet.user.user_img, class: "tweet-user-icon")
+      -else
+        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "tweet-user-icon")
       .content-header
         %span.nickname<>
           = tweet.user.nickname

@@ -49,7 +49,10 @@
       .profile-page-img
         = image_tag("http://photosku.com/img/slick/02.jpg", class: "profile-header-img")
         .profile-page-user-icon
-          = image_tag(@user.user_img, class: "profile-icon-size")
+          - if @user.user_img
+            = image_tag(@user.user_img, class: "profile-icon-size")
+          -else
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "profile-icon-size")
     .profile-nav-bar
       .profile-sub-nav
         .profile-hidden-nav
