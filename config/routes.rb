@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   end
   resources :user, only:[:show]
   resources :relationships, only: [:create, :destroy]
+  resources :search, only:[:index] do
+    collection do
+      get :tweet
+    end
+  end
 end

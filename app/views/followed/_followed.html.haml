@@ -2,24 +2,30 @@
   .grid-cell-inner
     = link_to user_path(followed.id) do
       .grid-cell-inner-header-img
-        = image_tag("http://photosku.com/img/slick/02.jpg", class: "grid-profile-header-img")
+        = image_tag(followed.header_img, class: "grid-profile-header-img")
   .grid-cell-bottom
     .grid-cell-user-icon
-      = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "grid-cell-user-icon-size")
+      = image_tag(followed.user_img, class: "grid-cell-user-icon-size")
     .profile-card
       .fa.fa-cog
       .profile-button
-        %button.profile-btn-follow
-          %span.profile-btn-follow-text
-            フォロー中
+        -if current_user.following?(followed)
+          = form_for(current_user.active_relationships.find_by(followed_id: followed.id), html:{ method: :delete }) do |f|
+            = f.submit "フォロー解除する", class: "profile-btn-follow"
+        -else
+          = form_for(current_user.active_relationships.build) do |f|
+            = hidden_field_tag :following_id, followed.id
+            =f.submit "フォローする", class: "profile-btn-follow"
     .grid-cell-profile
       .grid-cell-name
         = followed.nickname
       .grid-cell-id
+        @
         = followed.username
       .grid-cell-follower
-        フォローされています
+        - if current_user.following?(followed)
+          フォローしています
+        - else
+          フォローしていません
     .profile-card-bio
-      なんでそんな言い方するの？
-      なんでそんな言い方するの？
-      なんでそんな言い方するの？
+      = followed.description

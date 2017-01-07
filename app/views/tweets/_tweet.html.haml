@@ -4,7 +4,7 @@
       .user-profile__head
         = image_tag("http://cdn-ak.f.st-hatena.com/images/fotolife/S/SikisimaHisayuki/20160323/20160323231426.png", class: "header_img")
       .user-profile__bottom
-        =image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon_img")
+        =image_tag(current_user.user_img, class: "icon_img")
 
         .user-name
           .nickname
@@ -30,7 +30,7 @@
                 %span.u-block
                   フォロワー
                 %span.user-follower-number.u-number
-                  = @current_user.followers.count
+                  = current_user.followers.count
     .twitter-trend
       .trend-header
         %span.trend-location

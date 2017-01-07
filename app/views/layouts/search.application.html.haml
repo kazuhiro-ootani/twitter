@@ -45,101 +45,35 @@
                 = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
 
 
-    .profile-page
-      .profile-page-img
-        = image_tag("http://photosku.com/img/slick/02.jpg", class: "profile-header-img")
-        .profile-page-user-icon
-          = image_tag(@user.user_img, class: "profile-icon-size")
-    .profile-nav-bar
-      .profile-sub-nav
-        .profile-hidden-nav
-        .profile-main-nav
-          .profile-main-nav-inner
-            %ul.main-nav-contents
-              %li.main-nav-content
-                = link_to user_path(@user) do
-                  %span.nav-tweet-text.nav-info
-                    ツイート
-                  %span.nav-tweet-number.nav-info
-                    = @user.tweets.count
-              %li.main-nav-content
-                = link_to following_path do
-                  %span.nav-tweet-text.nav-info
-                    フォロー
-                  %span.nav-tweet-number.nav-info
-                    = @user.following.count
-              %li.main-nav-content
-                = link_to followed_path do
-                  %span.nav-tweet-text.nav-info
-                    フォロワー
-                  %span.nav-tweet-number.nav-info
-                    = @user.followers.count
-              %li.main-nav-content
-                %span.nav-tweet-text.nav-info
-                  いいね
-                %span.nav-tweet-number.nav-info
-                  29402904
-              %li.main-nav-content
-                %span.nav-tweet-text.nav-info
-                  リスト
-                %span.nav-tweet-number.nav-info
-                  1
-              %li.main-nav-content
-                %span.nav-tweet-text.nav-info
-                  モーメント
-                %span.nav-tweet-number.nav-info
-                  0
-            - if (@user.id == current_user.id)
-              .profile-edit-btn-wrap
-                %button.profile-edit-btn
-                  プロフィール編集
-            - else
-              -if current_user.following?(@user)
-                .profile-edit-btn-wrap
-                  = form_for(current_user.active_relationships.find_by(followed_id: @user.id), html:{ method: :delete }) do |f|
-                    = f.submit "フォロー解除する", class: "profile-edit-btn"
-              -else
-                .profile-edit-btn-wrap
-                  = form_for(current_user.active_relationships.build) do |f|
-                    = hidden_field_tag :following_id, @user.id
-                    =f.submit "フォローする", class: "profile-edit-btn"
+    .prof
+    .search-info__center
+      %h1
+        = params[:keyword]
 
     .info-container
+      .search-info-nav
+        %ul.search-info-main
+          %li.search-info-wadai
+            %a.search-link
+              話題のツイート
+          %li.search-info-all-tweet
+            = link_to tweet_search_index_path(keyword: @search_word), class: "search-link" do
+              すべてのツイート
+          %li.search-info-user
+            = link_to search_index_path(keyword: @search_word), class: "search-link" do
+              ユーザー名
+          %li.search-info-img
+            %a.search-link
+              画像
+          %li.search-info-movie
+            %a.search-link
+              動画
+          %li.search-info-other
+            %a.search-link
+              その他
       .info-container-inner
         .profile-nav-left
           .profile-nav-left-info
-            .profile-nav-left-info-nickname
-              = @user.nickname
-            .profile-nav-left-info-id
-              = @user.username
-            .profile-nav-left-info-bio
-              うわあああああああんああああ
-            .profile-nav-left-info-url
-              .fa.fa-link
-              .profile-url
-                http://google.co.jp/
-            .profile-nav-left-info-created-data
-              .fa.fa-calendar
-              .calendar-bio
-                2010年1月登録
-          .photo-rails
-            .photo-info
-              .fa.fa-camera.bio-camera
-              .photo-number
-                732 画像と動画
-            .photo-box
-              .my-photo.media
-                = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
-              .my-photo.media
-                = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
-              .my-photo.media
-                = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
-              .my-photo.media
-                = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
-              .my-photo.media
-                = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
-              .my-photo.media
-                = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
           .recommend-user
             .recommend-user-header
               %span.notification

@@ -68,9 +68,9 @@ html,body{
       float:left;
       .search{
         display: inline-block;
-        form{
+        .form-tag-search{
           height: 25px;
-          input{
+          .input-search{
             position:relative;
             width: 221px;
             height: 34px;
@@ -81,12 +81,16 @@ html,body{
             background-color: #f5f8fa;
             border: 1px solid #e1e8ed;
             border-radius: 21px;
+            outline: none;
           }
           .search--btn{
-            right: 257px;
-            top: 0;
-            padding: 16px;
-            position:absolute;
+            right: 274px;
+            top: 15px;
+            padding: 0px;
+            position: absolute;
+            background: none;
+            border: 0;
+            font-size: 19px;
           }
         }
       }

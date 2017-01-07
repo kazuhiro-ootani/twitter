@@ -25,9 +25,11 @@
     .top-content__right
       .top-content__right-block
         .search
-          %form{:action => "/", :method => ""}
-            %input{placeholder: "キーワード検索"}
-            %i.fa.fa-search{class: "search--btn"}
+          =form_tag("/search", method: "get",class: "form-tag-search") do
+            %input{placeholder: "キーワード検索",name:"keyword" ,class: "input-search"}
+            = button_tag(class: "search--btn") do
+              %i.fa.fa-search
+
         %ul.link__icon
           %li.user__icon
             = link_to image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size"),destroy_user_session_path, method: :delete

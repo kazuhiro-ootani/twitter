@@ -4,7 +4,9 @@ $(function(){
     '<li class="tweet-list">'+
     '<div class="message-tweet-content">' +
     '<div class="content">' +
-    '<img class="tweet-user-icon" src="http://www.starico-03.com/stamp/outline/a231269-0.png" alt="A231269 0" />' +
+    '<img class="tweet-user-icon" src="' +
+    message.user_img +
+    '" alt="A231269 0" />' +
     '<div class="content-header">' +
     '<span class="nickname">' +
     message.nickname +
