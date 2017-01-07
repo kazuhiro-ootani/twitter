@@ -32,4 +32,7 @@ class User < ApplicationRecord
     Tweet.from_users_followed_by(self)
   end
 
+  default_value_for :user_img, "http://zanex.wp-x.jp/wp-content/uploads/2015/07/o0800080011801224596.jpg"
+  default_value_for :header_img, "http://photosku.com/img/slick/02.jpg"
+
 end
