@@ -1,0 +1,31 @@
+%li.tweet-list
+  .message-tweet-content
+    .content
+      -if tweet.tweet.user.user_img
+        = image_tag(tweet.tweet.user.user_img, class: "tweet-user-icon")
+      -else
+        =image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "tweet-user-icon")
+      .content-header
+        %span.nickname<>
+          = tweet.tweet.user.nickname
+        %span.id<>
+          @
+          = tweet.tweet.user.username
+        %span.timestamps<>
+          = tweet.tweet.created_at
+        .content-main-text<>
+          = tweet.tweet.text
+      .content-btn
+        .reply-btn
+          .fa.fa-reply
+        .retweet-btn
+          .fa.fa-retweet
+        .favorite-btn
+          - if current_user.favorite?(tweet.tweet)
+            = link_to favorite_path(current_user.favorites.find_by(tweet_id: tweet.tweet.id)), method: :delete do
+              .fa.fa-heart.fav
+          - else
+            = link_to favorites_path(tweet_id: tweet.tweet.id), method: :post do
+              .fa.fa-heart.not-fav
+        .detail-btn
+          .fa.fa-ellipsis-h
