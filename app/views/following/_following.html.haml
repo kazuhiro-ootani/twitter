@@ -1,31 +1,31 @@
 .grid-cell
   .grid-cell-inner
-    = link_to user_path(followed.id) do
+    = link_to user_path(following.id) do
       .grid-cell-inner-header-img
-        = image_tag(followed.header_img, class: "grid-profile-header-img")
+        = image_tag(following.header_img, class: "grid-profile-header-img")
   .grid-cell-bottom
     .grid-cell-user-icon
-      = image_tag(followed.user_img, class: "grid-cell-user-icon-size")
+      = image_tag(following.user_img, class: "grid-cell-user-icon-size")
     .profile-card
       .fa.fa-cog
       .profile-button
-        -if current_user.following?(followed)
-          = form_for(current_user.active_relationships.find_by(followed_id: followed.id), html:{ method: :delete }) do |f|
+        -if current_user.following?(following)
+          = form_for(current_user.active_relationships.find_by(followed_id: following.id), html:{ method: :delete }) do |f|
             = f.submit "フォロー解除する", class: "profile-btn-follow"
         -else
           = form_for(current_user.active_relationships.build) do |f|
-            = hidden_field_tag :following_id, followed.id
+            = hidden_field_tag :following_id, following.id
             =f.submit "フォローする", class: "profile-btn-follow"
     .grid-cell-profile
       .grid-cell-name
-        = followed.nickname
+        = following.nickname
       .grid-cell-id
         @
-        = followed.username
+        = following.username
       .grid-cell-follower
-        - if current_user.following?(followed)
+        - if current_user.following?(following)
           フォローしています
         - else
           フォローしていません
     .profile-card-bio
-      = followed.description
+      = following.description
