@@ -1,10 +1,11 @@
 %li.tweet-list
   .message-tweet-content
     .content
-      -if tweet.user.user_img
-        = image_tag(tweet.user.user_img, class: "tweet-user-icon")
-      -else
-        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "tweet-user-icon")
+      = link_to user_path(tweet.user.id) do
+        -if tweet.user.user_img
+          = image_tag(tweet.user.user_img, class: "tweet-user-icon")
+        -else
+          = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "tweet-user-icon")
       .content-header
         %span.nickname<>
           = tweet.user.nickname
@@ -21,6 +22,11 @@
         .retweet-btn
           .fa.fa-retweet
         .favorite-btn
-          .fa.fa-heart
+          - if current_user.favorite?(tweet)
+            = link_to favorite_path(current_user.favorites.find_by(tweet_id: tweet.id)), method: :delete do
+              .fa.fa-heart.fav
+          - else
+            = link_to favorites_path(tweet_id: tweet.id), method: :post do
+              .fa.fa-heart.not-fav
         .detail-btn
           .fa.fa-ellipsis-h
