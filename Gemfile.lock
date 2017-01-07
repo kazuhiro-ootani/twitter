@@ -70,6 +70,8 @@ GEM
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    default_value_for (3.0.2)
+      activerecord (>= 3.2.0, < 5.1)
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -228,6 +230,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   coffee-rails (~> 4.2)
+  default_value_for
   devise
   erb2haml
   faker
