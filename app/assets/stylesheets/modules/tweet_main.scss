@@ -141,6 +141,14 @@
               color: #aab8c2;
               display: inline-block;
               min-width: 80px;
+
+              .fa-heart.fav{
+                color: red;
+              }
+
+              .fa-heart.not-fav{
+                color: #aab8c2;
+              }
             }
             .detail-btn{
               color: #aab8c2;

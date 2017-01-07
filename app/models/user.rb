@@ -13,8 +13,24 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship",
                                    foreign_key: "followed_id",
                                    dependent:   :destroy
- has_many :following, through: :active_relationships,  source: :followed
- has_many :followers, through: :passive_relationships, source: :follower
+  has_many :following, through: :active_relationships,  source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
+  has_many :favorites
+  has_many :favorite_tweets, through: :favorites, source: :tweet
+
+  def favorite?(tweet)
+    favorites.find_by(tweet_id: tweet.id)
+  end
+
+  def favorite!(tweet)
+    favorites.create!(tweet_id: tweet.id)
+  end
+
+  def unfavorite!(tweet)
+    favorites.find_by(tweet_id: tweet.id).destroy
+  end
+
 
   def following?(other_user)
     active_relationships.find_by(followed_id: other_user.id)

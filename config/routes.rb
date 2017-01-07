@@ -16,4 +16,5 @@ Rails.application.routes.draw do
       get :tweet
     end
   end
+  resources :favorites, only: [:show,:create, :destroy]
 end
