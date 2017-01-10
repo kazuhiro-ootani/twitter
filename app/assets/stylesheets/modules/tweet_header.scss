@@ -16,37 +16,35 @@ html,body{
 .top-content{
   height: 46px;
 
-  ul{
-    li{
-      list-style: none;
-      float:left;
-      color: #66757f;
-      overflow: hidden;
-      height: 46px;
+  .header-list{
+    list-style: none;
+    float:left;
+    color: #66757f;
+    overflow: hidden;
+    height: 46px;
 
 
-      .fa.fa-home:before {
-        margin: 11px 0 0 10px;
-        display: inline-block;
-        content: "\f015";
-        font-family: FontAwesome;
-        font-size: 21px;
-      }
-      .fa.fa-notice:before{
-        margin: 11px 0 0 10px;
-        display: inline-block;
-        content: "\f0f3";
-        font-family: FontAwesome;
-        font-size: 21px;
-      }
+    .fa.fa-home:before {
+      margin: 11px 0 0 10px;
+      display: inline-block;
+      content: "\f015";
+      font-family: FontAwesome;
+      font-size: 21px;
+    }
+    .fa.fa-notice:before{
+      margin: 11px 0 0 10px;
+      display: inline-block;
+      content: "\f0f3";
+      font-family: FontAwesome;
+      font-size: 21px;
+    }
 
-      .fa.fa-direct-message:before{
-        margin: 11px 0 0 10px;
-        display: inline-block;
-        content: "\f003";
-        font-family: FontAwesome;
-        font-size: 21px;
-      }
+    .fa.fa-direct-message:before{
+      margin: 11px 0 0 10px;
+      display: inline-block;
+      content: "\f003";
+      font-family: FontAwesome;
+      font-size: 21px;
     }
   }
   &__left{
@@ -84,7 +82,7 @@ html,body{
             outline: none;
           }
           .search--btn{
-            right: 274px;
+            right: 311px;
             top: 15px;
             padding: 0px;
             position: absolute;
@@ -101,13 +99,15 @@ html,body{
 
 
       .icon-size{
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         border-radius: 4px;
+        margin: 0 14px;
       }
       .tweet--btn{
         width: 100px;
         height: 32px;
+        border-radius: 5px;
       }
     }
   }
