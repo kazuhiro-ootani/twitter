@@ -4,17 +4,17 @@
     .top-content__left
       %ul.navigation
         = link_to root_path do
-          %li.navigation
+          %li.navigation.header-list
             .top-content__home
               %span.fa.fa-home
               %span.text
                 ホーム
-        %li.navigation
+        %li.navigation.header-list
           .top-content__notice
             %span.fa.fa-notice
             %span.text
               通知
-        %li.navigation
+        %li.navigation.header-list
           .top-content__direct-message
             %span.fa.fa-direct-message
             %span.text
@@ -31,10 +31,26 @@
               %i.fa.fa-search
 
         %ul.link__icon
-          %li.user__icon
-            = link_to image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size"),destroy_user_session_path, method: :delete
+          %li.user__icon.header-list
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size")
+            %ul#drop-child
+              = link_to user_path(current_user), class: "pulldown-link" do
+                %li.pulldown-list
+                  %span.pulldown-username
+                    = current_user.username
+                  %span.pulldown-notification
+                    プロフィールを表示
+                %li.pulldown-divider
+                %li.pulldown-list
+                  %span.pulldown-main-notification
+                    プロフィール編集
+                = link_to destroy_user_session_path, method: :delete,  class: "pulldown-link" do
+                  %li.pulldown-list
+                    %span.pulldown-main-notification
+                      ログアウト
 
-          %li.tweet__btn
+
+          %li.tweet__btn.header-list
             = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
 
 = render partial: 'tweets/tweet',locals: {feed_tweets: @feed_tweets}

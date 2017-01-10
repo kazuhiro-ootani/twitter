@@ -53,6 +53,9 @@
       top: 1px;
       left: 130px;
       display: inline-block;
+      .new-tweet-btn{
+        border-radius: 5px;
+      }
     }
     .tweet-counter{
       color: #8899a6;
@@ -105,6 +108,9 @@
             float: left;
             }
           .content-header{
+            span{
+              margin-right: 5px;
+            }
             span.nickname{
               color: #292f33;
               font-size: 14px;
