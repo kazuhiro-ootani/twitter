@@ -40,14 +40,14 @@
                     = current_user.username
                   %span.pulldown-notification
                     プロフィールを表示
-                %li.pulldown-divider
+              %li.pulldown-divider
+              %li.pulldown-list
+                %span.pulldown-main-notification
+                  プロフィール編集
+              = link_to destroy_user_session_path, method: :delete,  class: "pulldown-link" do
                 %li.pulldown-list
                   %span.pulldown-main-notification
-                    プロフィール編集
-                = link_to destroy_user_session_path, method: :delete,  class: "pulldown-link" do
-                  %li.pulldown-list
-                    %span.pulldown-main-notification
-                      ログアウト
+                    ログアウト
 
 
           %li.tweet__btn.header-list

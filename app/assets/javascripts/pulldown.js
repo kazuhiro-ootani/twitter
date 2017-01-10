@@ -1,12 +1,12 @@
 $(function(){
-    $('.user__icon.header-list').on('click',function(e){
-        $(this).children('#drop-child').slideToggle();
-        e.stopPropagation();
+    $('.header-list').on('click',function(e){
+        $(this).children('#drop-child').show();
   });
 
-  $(document).on('click', function() {
-    $('#drop-child').hide();
-    });
-
-  $('#drop-child').click(function(e) {e.stopPropagation();});
+  $(document).on('click', function(e) {
+    console.log(e);
+    if (!$(e.target).closest('.header-list').length){
+      $('#drop-child').fadeOut();
+  }
+});
 });
