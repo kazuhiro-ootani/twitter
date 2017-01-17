@@ -48,8 +48,6 @@ class User < ApplicationRecord
     Tweet.from_users_followed_by(self)
   end
 
-  default_value_for :user_img, "user_img.jpg"
-  default_value_for :header_img, "header_img.jpg"
 
     # allow users to update their accounts without passwords
    def update_without_current_password(params, *options)
