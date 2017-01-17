@@ -32,7 +32,7 @@
 
         %ul.link__icon
           %li.user__icon.header-list
-            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size")
+            = image_tag(current_user.user_img.url, class: "icon-size")
             %ul#drop-child
               = link_to user_path(current_user), class: "pulldown-link" do
                 %li.pulldown-list

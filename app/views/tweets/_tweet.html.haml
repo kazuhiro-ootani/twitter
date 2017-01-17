@@ -2,7 +2,7 @@
   .tweet-main-content__left
     .user-profile
       .user-profile__head
-        = image_tag("http://cdn-ak.f.st-hatena.com/images/fotolife/S/SikisimaHisayuki/20160323/20160323231426.png", class: "header_img")
+        = image_tag(current_user.header_img.url, class: "header_img")
       .user-profile__bottom
         -if current_user.user_img
           =image_tag(current_user.user_img, class: "icon_img")
@@ -93,7 +93,7 @@
 .tweet-center-page
   .message-formbox
     .message-user-box
-      =image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "user-img-box")
+      =image_tag(current_user.user_img.url, class: "user-img-box")
     = form_for @tweet,html: {class: 'message-tweet-form"'}  do |f|
       = f.text_area :text, class: "message-input", placeholder: "いまどうしてる？"
       .fa.fa-camera.pre_camera

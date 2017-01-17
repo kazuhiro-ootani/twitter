@@ -41,7 +41,7 @@
 
           %ul.link__icon
             %li.user__icon.header-list
-              = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "icon-size")
+              = image_tag(@user.user_img.url, class: "icon-size")
               %ul#drop-child
                 = link_to user_path(current_user), class: "pulldown-link" do
                   %li.pulldown-list
@@ -65,7 +65,7 @@
 
     .profile-page
       .profile-page-img
-        = image_tag("http://photosku.com/img/slick/02.jpg", class: "profile-header-img")
+        = image_tag(@user.header_img, class: "profile-header-img")
         .profile-page-user-icon
           - if @user.user_img
             = image_tag(@user.user_img, class: "profile-icon-size")

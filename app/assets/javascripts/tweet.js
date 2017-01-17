@@ -5,7 +5,7 @@ $(function(){
     '<div class="message-tweet-content">' +
     '<div class="content">' +
     '<img class="tweet-user-icon" src="' +
-    message.user_img +
+    message.user_img.user_img.url +
     '" alt="A231269 0" />' +
     '<div class="content-header">' +
     '<span class="nickname">' +
