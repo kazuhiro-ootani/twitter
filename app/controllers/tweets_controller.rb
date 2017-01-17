@@ -6,6 +6,7 @@ def index
 @tweets = Tweet.order('created_at DESC').limit(20)
 @tweeto = current_user.tweets.build
 @feed_tweets = current_user.feed.order('created_at DESC')
+@recommend = User.all.sample(3)
 end
 
 def new

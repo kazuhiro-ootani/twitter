@@ -123,34 +123,7 @@
         更新
       %span.view-all-link
         すべてを見る
-    .recommend-follow-users
-      .recommend-follow-user
-        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
-        .recommend-user-list
-          %span.recommend-user-nickname
-            めそじ
-          %span.recommend-user-id
-            @mesozi
-        .recommend-user-follow
-          フォローする
-      .recommend-follow-user
-        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
-        .recommend-user-list
-          %span.recommend-user-nickname
-            めそじ
-          %span.recommend-user-id
-            @mesozi
-        .recommend-user-follow
-          フォローする
-      .recommend-follow-user
-        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
-        .recommend-user-list
-          %span.recommend-user-nickname
-            めそじ
-          %span.recommend-user-id
-            @mesozi
-        .recommend-user-follow
-          フォローする
+        = render partial: 'tweets/recommend',collection: recommend
       .recommend-user__more
         友だちを見つける
   .flex-module
