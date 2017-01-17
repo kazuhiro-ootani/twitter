@@ -1,0 +1,11 @@
+.recommend-follow-users
+  .recommend-follow-user
+    = link_to user_path(recommend.id) do
+      = image_tag(recommend.user_img.url, class: "recommend-user-icon")
+    .recommend-user-list
+      %span.recommend-user-nickname
+        = recommend.nickname
+      %span.recommend-user-id
+        = recommend.username
+    .recommend-user-follow
+      フォローする
