@@ -1,0 +1,105 @@
+.header-edit-mozi{
+  position: relative;
+  top: 213px;
+  left: 42%;
+  font-size: 27px;
+  color: white;
+}
+.icon-edit-mozi{
+  position: absolute;
+  top: 94px;
+  left: 5px;
+  font-size: 25px;
+  color: white;
+}
+.mozi{
+  background: #fff;
+  border: 5px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 1px rgba(136,153,166,0.15);
+  height: 200px;
+  position: relative;
+  width: 200px;
+  background: black;
+  opacity: 0.4;
+}
+.profile-header-img-edit{
+  height: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  width: 100%;
+  opacity: 0.5;
+}
+
+
+.profile-nav-left-info-nickname-edit{
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.375;
+  width: 100%;
+}
+
+.profile-nav-left-info-bio-edit{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  width: 100%;
+}
+.width-100{
+  width: 100%;
+}
+.edit-camera{
+  position: relative;
+  font-size: 50px;
+  color: white;
+  top: -171px;
+  left: 75px;
+  opacity: 0.8;
+}
+
+.edit-header-camera{
+  font-size: 50px;
+  color: white;
+  opacity: 0.8;
+  position: absolute;
+  top: 171px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.profile-page-user-icon-edit{
+  left: 146px;
+  position: relative;
+  transition: bottom .3s;
+  z-index: 3;
+  top: 105px;
+  width: 210px;
+  height: 210px;
+}
+
+.file-field-none{
+  display: none;
+  width: 0;
+}
+.edit_user{
+  width: 0;
+}
+
+.profile-edit-btn-sub{
+  background-color: #1da1f2;;
+  background-repeat: no-repeat;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: normal;
+  padding: 8px 16px;
+  position: relative;
+}
