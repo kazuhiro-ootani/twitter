@@ -1,6 +1,6 @@
 $(function(){
   function buildNewTweetComponent(message){
-    var attomark = '@';
+    var attomark = "@";
     var html =
     '<li class="tweet-list">'+
     '<div class="message-tweet-content">' +
