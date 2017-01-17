@@ -1,36 +1,265 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "off"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+#header-bar
+
+  .top-content
+    .top-content__left
+      %ul.navigation
+        = link_to root_path do
+          %li.navigation.header-list
+            .top-content__home
+              %span.fa.fa-home
+              %span.text
+                ホーム
+        %li.navigation.header-list
+          .top-content__notice
+            %span.fa.fa-notice
+            %span.text
+              通知
+        %li.navigation.header-list
+          .top-content__direct-message
+            %span.fa.fa-direct-message
+            %span.text
+              メッセージ
+    =link_to root_path do
+      %i.fa.fa-twitter
+
+    .top-content__right
+      .top-content__right-block
+        .search
+          =form_tag("/search", method: "get",class: "form-tag-search") do
+            %input{placeholder: "キーワード検索",name:"keyword" ,class: "input-search"}
+            = button_tag(class: "search--btn") do
+              %i.fa.fa-search
+
+      %ul.link__icon
+        %li.user__icon.header-list
+          = image_tag(@user.user_img.url, class: "icon-size")
+          %ul#drop-child
+            = link_to user_path(current_user), class: "pulldown-link" do
+              %li.pulldown-list
+                %span.pulldown-username
+                  = current_user.username
+                %span.pulldown-notification
+                  プロフィールを表示
+              %li.pulldown-divider
+              %li.pulldown-list
+                %span.pulldown-main-notification
+                  プロフィール編集
+              = link_to destroy_user_session_path, method: :delete,  class: "pulldown-link" do
+                %li.pulldown-list
+                  %span.pulldown-main-notification
+                    ログアウト
+
+
+          %li.tweet__btn.header-list
+            = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
+
+
+.profile-page
+  .profile-page-img
+    = image_tag(@user.header_img.url, class: "profile-header-img-edit")
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      %label
+        = f.file_field :header_img
+        .fa.fa-camera.edit-header-camera
+    %span.header-edit-mozi
+      ヘッダー画像を変更する
+    .profile-page-user-icon-edit
+      - if @user.user_img
+        = image_tag(@user.user_img.url, class: "mozi")
+      -else
+        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "profile-icon-size")
+      .icon-edit-mozi
+        プロフィール画像を変更する
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        %label
+          = f.file_field :user_img, class: "file-field-none"
+          .fa.fa-camera.edit-camera
+.profile-nav-bar
+  .profile-sub-nav
+    .profile-hidden-nav
+    .profile-main-nav
+      .profile-main-nav-inner
+        %ul.main-nav-contents
+          %li.main-nav-content
+            = link_to user_path(@user) do
+              %span.nav-tweet-text.nav-info
+                ツイート
+              %span.nav-tweet-number.nav-info
+                = @user.tweets.count
+          %li.main-nav-content
+            = link_to following_path(@user) do
+              %span.nav-tweet-text.nav-info
+                フォロー
+              %span.nav-tweet-number.nav-info
+                = @user.following.count
+          %li.main-nav-content
+            = link_to followed_path(@user) do
+              %span.nav-tweet-text.nav-info
+                フォロワー
+              %span.nav-tweet-number.nav-info
+                = @user.followers.count
+          %li.main-nav-content
+            = link_to favorite_path(@user) do
+              %span.nav-tweet-text.nav-info
+                いいね
+              %span.nav-tweet-number.nav-info
+                = @user.favorites.count
+          %li.main-nav-content
+            %span.nav-tweet-text.nav-info
+              リスト
+            %span.nav-tweet-number.nav-info
+              1
+          %li.main-nav-content
+            %span.nav-tweet-text.nav-info
+              モーメント
+            %span.nav-tweet-number.nav-info
+              0
+        - if (@user.id == current_user.id)
+          .profile-edit-btn-wrap
+            %button.profile-edit-btn-sub
+              変更を保存
+        - else
+          -if current_user.following?(@user)
+            .profile-edit-btn-wrap
+              = form_for(current_user.active_relationships.find_by(followed_id: @user.id), html:{ method: :delete }) do |f|
+                = f.submit "フォロー解除する", class: "profile-edit-btn"
+          -else
+            .profile-edit-btn-wrap
+              = form_for(current_user.active_relationships.build) do |f|
+                = hidden_field_tag :following_id, @user.id
+                =f.submit "フォローする", class: "profile-edit-btn"
+
+.info-container
+  .info-container-inner
+    .profile-nav-left
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "profile-nav-left-info"}) do |f|
+        = devise_error_messages!
+        = f.text_field :nickname, autofocus: true, placeholder: "ユーザーID(半角英数のみ)", class: "profile-nav-left-info-nickname width-100"
+        .profile-nav-left-info-id<>
+          @
+          = @user.username
+        = f.text_field :description, autofocus: true, placeholder: "ユーザーID(半角英数のみ)", class: "profile-nav-left-info-bio width-100"
+        .profile-nav-left-info-url
+          .fa.fa-link
+          .profile-url
+            http://google.co.jp/
+        .profile-nav-left-info-created-data
+          .fa.fa-calendar
+          .calendar-bio
+            2010年1月登録
+      .photo-rails
+        .photo-info
+          .fa.fa-camera.bio-camera
+          .photo-number
+            732 画像と動画
+        .photo-box
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+          .my-photo.media
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "photobox-icon-size")
+      .recommend-user
+        .recommend-user-header
+          %span.notification
+            おすすめユーザー
+          %span.reload-link
+            更新
+          %span.view-all-link
+            すべてを見る
+        .recommend-follow-users
+          .recommend-follow-user
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
+            .recommend-user-list
+              %span.recommend-user-nickname
+                めそじ
+              %span.recommend-user-id
+                @mesozi
+            .recommend-user-follow
+              フォローする
+          .recommend-follow-user
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
+            .recommend-user-list
+              %span.recommend-user-nickname
+                めそじ
+              %span.recommend-user-id
+                @mesozi
+            .recommend-user-follow
+              フォローする
+          .recommend-follow-user
+            = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "recommend-user-icon")
+            .recommend-user-list
+              %span.recommend-user-nickname
+                めそじ
+              %span.recommend-user-id
+                @mesozi
+            .recommend-user-follow
+              フォローする
+          .recommend-user__more
+            友だちを見つける
+
+      .twitter-trend
+        .trend-header
+          %span.trend-location
+            トレンド
+          %span.middot
+            ・
+          %span.trend-change
+            変更する
+        .trend-contents
+          %ul.trend-contents-list
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+            %li.trend-main
+              %span.trend-name
+                終わらない
+              .trend-number
+                23942件のツイート
+
+
+    .profile-nav-right
+      .profile-nav-right-inner
