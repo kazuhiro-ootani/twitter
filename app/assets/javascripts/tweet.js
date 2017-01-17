@@ -12,6 +12,7 @@ $(function(){
     message.nickname +
     '</span>' +
     '<span class="id">' +
+    + @ +
     message.username +
     '</span>' +
     '<span class="timestamps">' +
