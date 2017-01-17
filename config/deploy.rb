@@ -28,6 +28,16 @@ set :rbenv_ruby, '2.3.1'
 #出力するログのレベル。
 set :log_level, :debug
 
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "~/.rbenv/shims:~/.rbenv/bin:$PATH",
+  AWS_REGION: ENV['AWS_REGION'],
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+        AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :sidekiq_queue, :carrierwave
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
