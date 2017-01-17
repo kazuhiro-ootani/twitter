@@ -51,4 +51,21 @@ class User < ApplicationRecord
   default_value_for :user_img, "http://zanex.wp-x.jp/wp-content/uploads/2015/07/o0800080011801224596.jpg"
   default_value_for :header_img, "http://photosku.com/img/slick/02.jpg"
 
+    # allow users to update their accounts without passwords
+   def update_without_current_password(params, *options)
+     params.delete(:current_password)
+
+     if params[:password].blank? && params[:password_confirmation].blank?
+       params.delete(:password)
+       params.delete(:password_confirmation)
+     end
+
+     result = update_attributes(params, *options)
+     clean_up_passwords
+     result
+   end
+
+   mount_uploader :header_img, HeaderImgUploader
+   mount_uploader :user_img, UserImgUploader
+
 end
