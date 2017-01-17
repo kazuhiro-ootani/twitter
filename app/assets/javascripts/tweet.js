@@ -1,5 +1,6 @@
 $(function(){
   function buildNewTweetComponent(message){
+    var attomark = '@';
     var html =
     '<li class="tweet-list">'+
     '<div class="message-tweet-content">' +
@@ -12,7 +13,7 @@ $(function(){
     message.nickname +
     '</span>' +
     '<span class="id">' +
-    '@' +
+    attomark +
     message.username +
     '</span>' +
     '<span class="timestamps">' +
