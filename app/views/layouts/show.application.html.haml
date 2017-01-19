@@ -41,7 +41,7 @@
 
           %ul.link__icon
             %li.user__icon.header-list
-              = image_tag(@user.user_img.url, class: "icon-size")
+              = image_tag(current_user.user_img, class: "icon-size")
               %ul#drop-child
                 = link_to user_path(current_user), class: "pulldown-link" do
                   %li.pulldown-list
@@ -133,10 +133,11 @@
           .profile-nav-left-info
             .profile-nav-left-info-nickname
               = @user.nickname
-            .profile-nav-left-info-id
+            .profile-nav-left-info-id<>
+              @
               = @user.username
             .profile-nav-left-info-bio
-              うわあああああああんああああ
+              = @user.description
             .profile-nav-left-info-url
               .fa.fa-link
               .profile-url
