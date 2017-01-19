@@ -4,8 +4,9 @@
       .grid-cell-inner-header-img
         = image_tag(following.header_img, class: "grid-profile-header-img")
   .grid-cell-bottom
-    .grid-cell-user-icon
-      = image_tag(following.user_img, class: "grid-cell-user-icon-size")
+    = link_to user_path(following.id) do
+      .grid-cell-user-icon
+        = image_tag(following.user_img, class: "grid-cell-user-icon-size")
     .profile-card
       .fa.fa-cog
       .profile-button
@@ -19,7 +20,7 @@
     .grid-cell-profile
       .grid-cell-name
         = following.nickname
-      .grid-cell-id
+      .grid-cell-id<>
         @
         = following.username
       .grid-cell-follower
