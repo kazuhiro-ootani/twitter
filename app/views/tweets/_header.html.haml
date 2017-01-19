@@ -1,0 +1,54 @@
+#header-bar
+
+  .top-content
+    .top-content__left
+      %ul.navigation
+        = link_to root_path do
+          %li.navigation.header-list
+            .top-content__home
+              %span.fa.fa-home
+              %span.text
+                ホーム
+        %li.navigation.header-list
+          .top-content__notice
+            %span.fa.fa-notice
+            %span.text
+              通知
+        %li.navigation.header-list
+          .top-content__direct-message
+            %span.fa.fa-direct-message
+            %span.text
+              メッセージ
+    =link_to root_path do
+      %i.fa.fa-twitter
+
+    .top-content__right
+      .top-content__right-block
+        .search
+          =form_tag("/search", method: "get",class: "form-tag-search") do
+            %input{placeholder: "キーワード検索",name:"keyword" ,class: "input-search"}
+            = button_tag(class: "search--btn") do
+              %i.fa.fa-search
+
+        %ul.link__icon
+          %li.user__icon.header-list
+            = image_tag(current_user.user_img.url, class: "icon-size")
+            %ul#drop-child
+              = link_to user_path(current_user), class: "pulldown-link" do
+                %li.pulldown-list
+                  %span.pulldown-username
+                    = current_user.username
+                  %span.pulldown-notification
+                    プロフィールを表示
+              %li.pulldown-divider
+              %li.pulldown-list
+                %span.pulldown-main-notification
+                  プロフィール編集
+              = link_to destroy_user_session_path, method: :delete,  class: "pulldown-link" do
+                %li.pulldown-list
+                  %span.pulldown-main-notification
+                    ログアウト
+
+
+          %li.tweet__btn.header-list
+            = image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "tweet--btn")
