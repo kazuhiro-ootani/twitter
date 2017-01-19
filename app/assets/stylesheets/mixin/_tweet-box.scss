@@ -1,6 +1,6 @@
 @mixin tweet-box{
   .message-tweet{
-    margin: 4px 300px;
+    margin: 0px 300px;
     li.tweet-list{
       border-bottom: 1px solid #e1e8ed;
     }
@@ -18,6 +18,9 @@
             float: left;
             }
           .content-header{
+            span{
+            margin-right: 5px;
+            }
             span.nickname{
               color: #292f33;
               font-size: 14px;
