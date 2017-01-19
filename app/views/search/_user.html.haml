@@ -2,13 +2,10 @@
   .grid-cell-inner
     = link_to user_path(user.id) do
       .grid-cell-inner-header-img
-        = image_tag("http://photosku.com/img/slick/02.jpg", class: "grid-profile-header-img")
+        = image_tag(user.header_img, class: "grid-profile-header-img")
   .grid-cell-bottom
     .grid-cell-user-icon
-      -if user.user_img
-        = image_tag(user.user_img, class: "grid-cell-user-icon-size")
-      -else
-        = image_tag("http://www.starico-03.com/stamp/outline/a231269-0.png", class: "grid-cell-user-icon-size")
+      = image_tag(user.user_img, class: "grid-cell-user-icon-size")
     .profile-card
       .fa.fa-cog
       .profile-button
@@ -24,7 +21,7 @@
     .grid-cell-profile
       .grid-cell-name
         = user.nickname
-      .grid-cell-id
+      .grid-cell-id<>
         @
         = user.username
       .grid-cell-follower
