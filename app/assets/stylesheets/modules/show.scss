@@ -32,6 +32,8 @@
   background-color: #fff;
   border-bottom: 1px solid #e1e8ed;
   height: 60px;
+  margin-bottom: 5px;
+
   .profile-sub-nav{
     margin: 0 125px;
     height: 60px;
@@ -229,6 +231,7 @@
         .recommend-follow-user{
           display: inline-block;
           margin-top: 10px;
+          width: 100%;
 
           .recommend-user-icon{
             width: 48px;
