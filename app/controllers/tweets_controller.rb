@@ -2,11 +2,11 @@ class TweetsController < ApplicationController
   before_action :auth_user
 
 def index
-@tweet = Tweet.new
-@tweets = Tweet.order('created_at DESC').limit(20)
-@tweeto = current_user.tweets.build
-@feed_tweets = current_user.feed.order('created_at DESC')
-@recommend = User.all.sample(3)
+  @tweet = Tweet.new
+  @feed_tweets = current_user.feed.order('created_at DESC')
+  recommend = User.where.not(id:current_user.id)
+  unfollow_recommend = recommend.reject {|recommend| current_user.following?(recommend)}
+  @unfollow_recommend = unfollow_recommend.sample(4)
 end
 
 def new
@@ -24,8 +24,6 @@ def create
 
 end
 
-def edit
-end
 
 end
 

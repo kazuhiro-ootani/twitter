@@ -12,7 +12,8 @@
         .user-name
           .nickname
             = current_user.nickname
-          .id
+          .id<>
+            @
             = current_user.username
         .user-info
           %ul.user-info__list
@@ -120,10 +121,11 @@
       %span.notification
         おすすめユーザー
       %span.reload-link
-        更新
+        = link_to "更新", recommend_index_path, remote: true
       %span.view-all-link
         すべてを見る
-        = render partial: 'tweets/recommend',collection: recommend
+        .render-wrapper
+          = render partial: 'tweets/recommend',collection: unfollow_recommend
       .recommend-user__more
         友だちを見つける
   .flex-module
