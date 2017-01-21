@@ -48,6 +48,11 @@ class User < ApplicationRecord
     Tweet.from_users_followed_by(self)
   end
 
+  def self.recommend(user)
+    recommend = where.not(id:user.id)
+    unfollow_recommend = recommend.reject {|recommend| user.following?(recommend)}
+    unfollow_recommend.sample(4)
+  end
 
     # allow users to update their accounts without passwords
    def update_without_current_password(params, *options)
