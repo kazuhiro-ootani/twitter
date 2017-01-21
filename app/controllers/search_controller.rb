@@ -1,18 +1,20 @@
 class SearchController < ApplicationController
 
+  layout 'search.application'
+  before_action :search_word, only: [:index, :tweet]
+
   def index
-    @user = current_user
-    @search_word = params[:keyword]
     @users = User.where(['nickname LIKE ?', "%#{@search_word}%"])
-    render layout: 'search.application'
-    
   end
 
   def tweet
-    @user = current_user
-    @search_word = params[:keyword]
     @tweets = Tweet.where(['text LIKE ?', "%#{@search_word}%"])
-    render layout: 'search.application'
   end
 
+  private
+
+  def search_word
+    @user = current_user
+    @search_word = params[:keyword]
+  end
 end
