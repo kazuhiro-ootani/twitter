@@ -1,6 +1,46 @@
 $(function(){
+
+    setInterval(function(){
+    reload();
+  },15000);
+
+  function reload(){
+    $.ajax({
+    type: 'GET',
+    url: '/tweets.json',
+    dataType: 'json'
+  }).done(function(data) {
+    var all_message_num = $('.tweet-list').length;
+
+    if (all_message_num !== data.length){
+      var data_num = data.length;
+      var num = data_num - all_message_num;
+      if (num > 0){
+        var htm =
+        '<div class="message-alarm" data-number =' +
+         num +
+          '>' +
+          num +
+        '件の新着ツイートを表示' +
+        '</div>';
+      $('.message-alarm-wrapper').html(htm);
+      };
+      $('.message-alarm').on('click', function() {
+          click(num,data);
+      });
+    };
+    });
+    function click(num,data){
+        for (var i = num; i >0; i--){
+        var html_tag = buildNewTweetComponent(data[i-1]);
+        $(html_tag).prependTo('.tweet-lists').hide().fadeIn(1000);
+        $('.message-alarm-wrapper').empty(html_tag);
+        };
+      };
+  };
+
   function buildNewTweetComponent(message){
-    var attomark = "@";
+    var mark = "@";
     var html =
     '<li class="tweet-list">'+
     '<div class="message-tweet-content">' +
@@ -13,7 +53,7 @@ $(function(){
     message.nickname +
     '</span>' +
     '<span class="id">' +
-    attomark +
+    mark +
     message.username +
     '</span>' +
     '<span class="timestamps">' +
@@ -50,11 +90,12 @@ $(function(){
   $('#message-tweet-button').on('click',function(e){
   e.preventDefault();
   if ($('.message-input').val() == ""){
-    alert("？？？？？？？？？？？？？？");
+    alert("メッセージを入れてね！");
   }
   else{
   var textField = $(".message-input");
   var form = $('#new_tweet').get()[0];
+  console.log(form);
 
   var formData = new FormData(form);
   $.ajax({
