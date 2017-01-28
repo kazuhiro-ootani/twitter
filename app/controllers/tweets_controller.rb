@@ -5,6 +5,10 @@ def index
   @tweet = Tweet.new
   @feed_tweets = current_user.feed.order('created_at DESC')
   @unfollow_recommend = User.recommend(current_user)
+  respond_to do |format|
+    format.html {}
+    format.json
+  end
 end
 
 def new

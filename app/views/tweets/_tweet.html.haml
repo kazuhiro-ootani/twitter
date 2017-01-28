@@ -109,8 +109,7 @@
             140
             = button_tag type: :submit, id:"message-tweet-button" do
               =image_tag("http://www.fastpic.jp/images.php?file=3402064864.png",class: "new-tweet-btn")
-  .message-alarm
-    300件の新着ツイートを表示
+  .message-alarm-wrapper
   .message-tweet-long
     %ul.tweet-lists
       = render partial: 'tweets/user_text',collection: feed_tweets, as:'tweet'
