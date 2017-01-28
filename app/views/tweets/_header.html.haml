@@ -41,9 +41,10 @@
                   %span.pulldown-notification
                     プロフィールを表示
               %li.pulldown-divider
-              %li.pulldown-list
-                %span.pulldown-main-notification
-                  プロフィール編集
+              = link_to edit_user_registration_path, class: "pulldown-link" do
+                %li.pulldown-list
+                  %span.pulldown-main-notification
+                    プロフィール編集
               = link_to destroy_user_session_path, method: :delete,  class: "pulldown-link" do
                 %li.pulldown-list
                   %span.pulldown-main-notification
