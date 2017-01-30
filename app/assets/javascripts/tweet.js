@@ -109,6 +109,11 @@ $(function(){
   .done(function(data){
     var added_html = buildNewTweetComponent(data);
     $('ul.tweet-lists').prepend(added_html);
+        setTimeout(function(){
+    if (data.text.match(/@管理者/)){
+      alert("管理者のSlackにメッセージを送信しました。");
+    }
+    },1000);
     textField.val('');
   })
   }
