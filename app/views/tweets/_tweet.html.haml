@@ -96,14 +96,14 @@
     .message-user-box
       =image_tag(current_user.user_img.url, class: "user-img-box")
     = form_for @tweet,html: {class: 'message-tweet-form"'}  do |f|
-      = f.text_area :text, class: "message-input", placeholder: "いまどうしてる？"
+      = f.text_area :text, class: "message-input placeholder",rows: 5, placeholder: "@管理者 で管理者にSlackでメッセージを送ります。"
       .fa.fa-camera.pre_camera
       .tweet-box-toolbar
         .tweet-box-extra
           .fa.fa-camera.new_camera
           .fa.fa-picture-o
           .fa.fa-bar-chart
-          .fa.fa-map-
+          .fa.fa-commenting-o
         .tweet-box-tweet-btn
           %span.tweet-counter
             140
@@ -163,4 +163,3 @@
   .flex-add
     .flex-add-inner
       Twitter広告
-
