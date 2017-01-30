@@ -17,19 +17,46 @@ end
 
 def create
   @tweet = Tweet.new(create_params)
+
     if @tweet.save
+      slack_test
       respond_to do |format|
         format.html { redirect_to :root }
         format.json
       end
     end
-
 end
-
 
 end
 
 private
+
+  def slack_test
+    if params[:tweet][:text] =~ /@管理者/
+    tweet_text = @tweet.text.gsub(/@管理者|^¥s|/, '')
+        text =
+
+"ユーザーからメッセージが来ました。
+-----------------------------
+
+
+▼送信日時(送信時間)
+ #{@tweet.created_at}
+
+▼送信者(ユーザーID)
+ @#{@tweet.user.username}
+
+▼メッセージ内容
+#{tweet_text}
+
+
+-----------------------------"
+
+    Slack.chat_postMessage(text: text, username: 'Twitter監視マン', channel: "#test")
+
+    end
+  end
+
   def create_params
     params.require(:tweet).permit(:text).merge(user_id:current_user.id)
   end
