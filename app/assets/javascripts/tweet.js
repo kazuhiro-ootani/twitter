@@ -23,7 +23,7 @@ $(function(){
           num +
         '件の新着ツイートを表示' +
         '</div>';
-      $('.message-alarm-wrapper').html(htm);
+        $('.message-alarm-wrapper').html(htm);
       };
       $('.message-alarm').on('click', function() {
           click(num,data);
@@ -40,6 +40,7 @@ $(function(){
   };
 
   function buildNewTweetComponent(message){
+    message.text = message.text.replace(/\r?\n/g, '<br>')
     var mark = "@";
     var html =
     '<li class="tweet-list">'+
@@ -95,9 +96,8 @@ $(function(){
   else{
   var textField = $(".message-input");
   var form = $('#new_tweet').get()[0];
-  console.log(form);
-
   var formData = new FormData(form);
+
   $.ajax({
     type: 'POST',
     url: '/tweets.json',
@@ -106,6 +106,7 @@ $(function(){
     processData: false,
     contentType: false,
   })
+
   .done(function(data){
     var added_html = buildNewTweetComponent(data);
     $('ul.tweet-lists').prepend(added_html);
